@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Web Améliorée</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers un fichier CSS externe -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #35424a;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #35424a;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #35424a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur ma page web améliorée</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+            <li><a href="#form">Formulaire</a></li>
+            <li><a href="#tableau">Tableau</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="section1">
+            <h2>Section 1</h2>
+            <p>Ceci est le contenu de la première section.</p>
+            <img src="https://via.placeholder.com/400" alt="Image d'exemple" />
+        </section>
+        <section id="section2">
+            <h2>Section 2</h2>
+            <p>Ceci est le contenu de la deuxième section.</p>
+        </section>
+        <section id="section3">
+            <h2>Section 3</h2>
+            <p>Ceci est le contenu de la troisième section.</p>
+        </section>
+        <section id="form">
+            <h2>Formulaire de Contact</h2>
+            <form id="contactForm">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Envoyer</button>
+            </form>
+            <p id="formResponse"></p>
+        </section>
+        <section id="tableau">
+            <h2>Tableau d'Exemple</h2>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Âge</th>
+                    <th>Ville</th>
+                </tr>
+                <tr>
+                    <td>Jean Dupont</td>
+                    <td>30</td>
+                    <td>Paris</td>
+                </tr>
+                <tr>
+                    <td>Marie Curie</td>
+                    <td>35</td>
+                    <td>Lyon</td>
+                </tr>
+                <tr>
+                    <td>Paul Martin</td>
+                    <td>28</td>
+                    <td>Marseille</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Mon Site Web Amélioré</p>
+    </footer>
+
+    <script>
+        // Script pour gérer l'envoi du formulaire
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Affiche une réponse simple
+            document.getElementById('formResponse').innerText = `Merci ${name}, votre message a été envoyé !`;
+            
+            // Réinitialise le formulaire
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
